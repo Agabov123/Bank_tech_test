@@ -1,6 +1,6 @@
 # Bank_tech_test
 
-##Requirements
+## Requirements
 
 You should be able to interact with your code via a REPL like IRB or Node. (You don't need to implement a command line interface that takes input from STDIN.)
 Deposits, withdrawal.
@@ -20,9 +20,9 @@ Then she would see
 ### 10/01/2023 || 1000.00 || || 1000.00
 
 ## Clone this project and run bundle:
-git clone https://github.com/Agabov123/Bank_tech_test.git
-
-bundle 
+- git clone https://github.com/Agabov123/Bank_tech_test.git
+- gem install bundler
+- bundle 
 
 ## To run tests
 
