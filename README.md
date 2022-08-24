@@ -19,7 +19,7 @@ date || credit || debit || balance
 13/01/2023 || 2000.00 || || 3000.00
 10/01/2023 || 1000.00 || || 1000.00
 ## Clone this project and run bundle:
-git clone https://github.com/Agabov123/Bank_tech_test/
+git clone https://github.com/Agabov123/Bank_tech_test.git
 
 bundle 
 
