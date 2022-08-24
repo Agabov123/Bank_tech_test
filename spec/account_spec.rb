@@ -2,21 +2,32 @@ require 'Account'
 
 describe Account do 
     it "allows deposit to be made" do 
-        account = Account.new 
+        account = Account.new
         account.deposit(1000)
-        expect(account.statement).to eq([{ :date=>"23 / 08 / 22", credit: 1000, debit: "", balance: 1000 }]);
+        expect(account.print_statement).to eq([{:balance=>1000, :credit=>1000, :date=>"24 / 08 / 22", :debit=>""}]);
     end
     it "allows withdraw to be made" do 
         account = Account.new
         account.deposit(1000)
         account.withdraw(500)
-        expect(account.statement).to eq([ {:date=>"23 / 08 / 22", credit: 1000, debit: "", balance: 1000 }, { :date=>"23 / 08 / 22", credit: "", debit: 500, balance: 500 }]);
+        expect(account.print_statement).to eq([{:balance=>500, :credit=>"", :date=>"24 / 08 / 22", :debit=>500}, {:balance=>1000, :credit=>1000, :date=>"24 / 08 / 22", :debit=>""}]);
     end 
-    it "prints statement with latest transaction at the top" do 
+    it "prints statement wich has more than one transaction" do 
         account = Account.new
         account.deposit(1000)
         account.deposit(2000)
         account.withdraw(500)
-        expect(account.statement[-1]).to eq ({ :date=>"23 / 08 / 22", credit: "", debit: 500, balance: 2500 })
+        expect(account.print_statement).to eq ([{:balance=>2500, :credit=>"", :date=>"24 / 08 / 22", :debit=>500}, {:balance=>3000, :credit=>2000, :date=>"24 / 08 / 22", :debit=>""}, {:balance=>1000, :credit=>1000, :date=>"24 / 08 / 22", :debit=>""}])
     end
+    it 'checks for the valid number with string input' do 
+        account = Account.new 
+        amount = 'qwerty'
+        expect(account.checkInput(amount)).to eq "Invalid input";
+    end
+    it 'checks for the valid number with numeric input' do  
+        account = Account.new
+        amount = '1000';
+        expect(account.checkInput(amount)).to eq 1000
+    end
+
 end
