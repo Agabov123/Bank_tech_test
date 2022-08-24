@@ -35,8 +35,8 @@ require './lib/account.rb'
 
 ## Example commands
 
--account = Account.new
--account.deposit(1000);
--account.deposit(2000);
--account.withdraw(500);
--account.print_statement;
+- account = Account.new
+- account.deposit(1000);
+- account.deposit(2000);
+- account.withdraw(500);
+- account.print_statement;
