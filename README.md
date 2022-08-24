@@ -31,7 +31,7 @@ rspec spec/account_spec.rb
 
 irb
 
-require './lib/bank.rb'
+require './lib/account.rb'
 
 ## Example commands
 
